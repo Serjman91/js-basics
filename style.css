@@ -1,0 +1,334 @@
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+/* Селектор по тэгу */
+h1 {
+    color: #667eea;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+/* Селектор по ID */
+#main-title {
+    border-bottom: 4px solid #764ba2;
+    padding-bottom: 15px;
+}
+
+/* Селектор по классу */
+.section {
+    margin: 30px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 5px solid #667eea;
+}
+
+.note {
+    color: #0066cc;
+    font-style: italic;
+    padding: 10px;
+    background: #e3f2fd;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* Комбинированные селекторы */
+p.highlight {
+    background: yellow;
+    padding: 5px;
+    font-weight: bold;
+}
+
+/* Вложенные селекторы */
+article p {
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Соседний элемент + */
+h2 + p {
+    margin-top: 0;
+    color: #764ba2;
+    font-size: 1.1em;
+}
+
+/* Прямые потомки > */
+.parent > p {
+    color: green;
+    font-weight: bold;
+}
+
+/* Все соседи ~ */
+.divider ~ p {
+    padding-left: 20px;
+    border-left: 3px solid #ccc;
+}
+
+/* Атрибутные селекторы */
+input[type="text"] {
+    border: 2px solid #667eea;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+a[href^="https"] {
+    color: green;
+}
+
+a[href$=".pdf"] {
+    color: orange;
+}
+
+a[href*="shop"] {
+    color: violet;
+}
+
+/* Псевдоклассы */
+button {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    margin: 5px;
+}
+
+button:hover {
+    background: #764ba2;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+input:focus {
+    border-color: #764ba2;
+    outline: none;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+}
+
+/* Псевдоэлементы */
+.decorated {
+    position: relative;
+}
+.decorated::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: #764ba2;
+    position: absolute;
+}
+
+.decorated::after {
+    content: " ✅";
+}
+
+.first-line-demo::first-letter {
+    font-weight: bold;
+    color: #667eea;
+    font-size: 1.2em;
+}
+
+/* Flexbox */
+
+.flex-control {
+    margin: 10px 0;
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+    border: 1px solid #0066cc;
+}
+
+.flex-control label {
+    margin: 0 10px 0 5px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: #e8eaf6;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+.section:has(#flex-col:checked) .flex-container {
+    flex-direction: column;
+}
+.section:has(#flex-between:checked) .flex-container {
+    justify-content: space-between;
+}
+.section:has(#flex-evenly:checked) .flex-container {
+    justify-content: space-evenly;
+}
+
+.flex-item {
+    background: #667eea;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    min-width: 100px;
+    text-align: center;
+}
+
+/* Интерактивность с :checked */
+#toggle {
+    display: none;
+}
+
+.toggle-box {
+    display: none;
+    padding: 20px;
+    background: #fff3cd;
+    border: 2px solid #ffc107;
+    border-radius: 10px;
+    margin-top: 10px;
+    animation: slideDown 0.3s ease;
+}
+
+#toggle:checked ~ .toggle-box {
+    display: block;
+}
+
+label[for="toggle"] {
+    display: inline-block;
+    background: #ffc107;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    user-select: none;
+}
+
+label[for="toggle"]:hover {
+    background: #ffb300;
+}
+
+/* :target */
+#info {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    background: #d1c4e9;
+    padding: 0;
+    border-radius: 10px;
+}
+
+#info:target {
+    opacity: 1;
+    max-height: 200px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+/* Анимации */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.animated-box {
+    background: coral;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    transition: all .3s ease-in-out;
+    margin: 10px 0;
+}
+
+.animated-box:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.alert {
+    animation: blink 2s infinite;
+    background: #ff5252;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* :has() - современный селектор */
+.card {
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin: 10px 0;
+    transition: 0.3s;
+}
+
+.card:has(input:checked) {
+    background: lightyellow;
+    border-color: #ffc107;
+    transform: scale(1.02);
+}
+
+/* Дополнительные стили */
+.demo-area {
+    margin: 15px 0;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+hr {
+    margin: 30px 0;
+    border: none;
+    border-top: 2px solid #e0e0e0;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

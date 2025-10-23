@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Примеры из Лекции</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h1 id="main-title">CSS Примеры из Лекции</h1>
+  <a href="#info">Открыть информацию (:target)</a>
+  <div class="section">
+    <h2>Базовые Селекторы</h2>
+    <p>Это обычный параграф (селектор по тэгу)</p>
+    <p class="note">Это заметка с классом .note</p>
+    <p class="highlight">Комбинированный селектор p.highlight</p>
+    <div class="highlight">Комбинированный селектор p.highlight</div>
+  </div>
+
+  <div class="section">
+    <h2>Вложенные Селекторы</h2>
+    <article>
+      <p>Этот параграф внутри article (цвет #333)</p>
+    </article>
+    <div class="parent">
+      <p>Прямой потомок .parent (зелёный, жирный)</p>
+      <div>
+        <p>Не прямой потомок (обычный стиль)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Соседние Элементы</h2>
+    <p>Первый абзац сразу после h2 имеет особый стиль</p>
+    <div class="divider" style="height: 2px; background: #ccc; margin: 15px 0;"></div>
+    <p>Этот абзац после divider</p>
+    <p>И этот тоже (оба имеют отступ слева)</p>
+  </div>
+
+  <div class="section">
+    <h2>Атрибутные Селекторы</h2>
+    <div class="demo-area">
+      <input type="text" placeholder="Введите текст (синяя рамка)">
+      <div style="margin-top: 15px;">
+        <p>Разные типы ссылок:</p>
+        <a href="https://example.com">HTTPS ссылка (зелёная)</a><br>
+        <a href="document.pdf">PDF файл (оранжевая)</a><br>
+        <a href="https://shop.example.com">Магазин (фиолетовая)</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Псевдоэлементы</h2>
+    <p class="decorated">Этот текст имеет эмодзи до и после</p>
+    <p class="first-line-demo">Первая строка этого длинного текста будет выделена жирным и увеличена. Остальной текст останется обычным. Это демонстрация псевдоэлемента ::first-line</p>
+  </div>
+
+  <div class="section">
+    <h2>Flexbox</h2>
+    <div class="flex-control">
+      <input type="checkbox" id="flex-col"/>
+      <label for="flex-col">Flex-col</label>
+      <input type="checkbox" id="flex-between"/>
+      <label for="flex-col">Justify-between</label>
+      <input type="checkbox" id="flex-evenly"/>
+      <label for="flex-col">Justify-evenly</label>
+    </div>
+    <div class="flex-container">
+      <div class="flex-item">Элемент 1</div>
+      <div class="flex-item">Элемент 2</div>
+      <div class="flex-item">Элемент 3</div>
+      <div class="flex-item">Элемент 4</div>
+    </div>
+  </div>
+
+  <details>
+    <summary>Что такое HTML?</summary>
+    <p>HTML (HyperText Markup Language) — язык разметки для создания веб-страниц. Он определяет структуру и содержимое документа.</p>
+  </details>
+
+  <div class="section">
+    <h2>Интерактивность</h2>
+    <div class="demo-area">
+      <button>Наведи на меня</button>
+      <button>Нажми меня</button>
+
+      <hr>
+
+      <input type="checkbox" id="toggle">
+      <label for="toggle">Показать/скрыть секретный блок</label>
+      <div class="toggle-box">
+        🎉 Секретный текст! Вы нашли меня используя :checked
+      </div>
+
+      <hr>
+
+
+      <div id="info">
+        Привет! Этот блок появляется через :target псевдокласс
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Анимации и Переходы</h2>
+    <div class="animated-box">
+      Наведи на меня для анимации! (transform + transition)
+    </div>
+    <div class="alert">
+      ⚠️ Мигающее предупреждение (@keyframes)
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Современный :has()</h2>
+    <div class="card">
+      <input type="checkbox" id="card-check">
+      <label for="card-check">Отметь меня чтобы изменить родителя</label>
+      <p>Родительский .card реагирует на состояние чекбокса внутри!</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Псевдоклассы Состояний</h2>
+    <div class="demo-area">
+      <label for="focus-element">Попробуй взаимодействовать с элементами:</label>
+      <input id="focus-element" type="text" placeholder="Кликни для фокуса">
+      <br><br>
+      <button>:hover при наведении</button>
+      <button>:active при клике</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
