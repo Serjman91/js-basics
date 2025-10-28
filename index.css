@@ -84,3 +84,8 @@ html, body {
     font-size: 48px;
     color: #333;
 }
+
+.post {
+    display: flex;
+    padding: 10px;
+}
