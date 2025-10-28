@@ -1,1 +1,31 @@
-.idea
+# Зависимости
+node_modules/
+venv/
+__pycache__/
+
+# IDE и редакторы
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Операционная система
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Временные файлы
+*.log
+*.tmp
+*.swp
+*~
+
+# Переменные окружения
+.env
+.env.local
+
+# Сборка
+dist/
+build/
+*.min.js
+*.min.css
