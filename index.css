@@ -79,3 +79,8 @@ html, body {
         flex-basis: 100%;
     }
 }
+
+.section-title {
+    font-size: 48px;
+    color: #333;
+}
